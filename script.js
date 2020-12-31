@@ -2,6 +2,19 @@ const headElem = document.getElementById("head");
 const buttonsElem = document.getElementById("buttons");
 const pagesElem = document.getElementById("pages");
 
+let topicCase = document.querySelector(".topic_case");
+let topics = document.querySelector(".topics")
+let test = document.querySelector(".test")
+
+function openTest() {
+	test.classList.add("test_active")
+	topics.classList.add("topics_inactive")
+	console.log('WoW')
+}
+
+topicCase.addEventListener('click', openTest);
+
+
 //Класс, который представляет сам тест
 class Quiz
 {
@@ -89,7 +102,7 @@ class Question
 {
 	constructor(text, answers)
 	{
-		this.text = text; 
+		this.text = text;
 		this.answers = answers; 
 	}
 
@@ -141,65 +154,11 @@ const results =
 	new Result("Вы в совершенстве знаете тему", 6)
 ];
 
-/*Массив с вопросами
-const questions = 
-[
-	new Question("2 + 2 = ", 
-	[
-		new Answer("2", 0),
-		new Answer("3", 0),
-		new Answer("4", 1),
-		new Answer("0", 0)
-	]),
-
-	new Question("2 * 2 = ", 
-	[
-		new Answer("2", 0),
-		new Answer("3", 0),
-		new Answer("4", 1),
-		new Answer("0", 0)
-	]),
-
-	new Question("2 / 2 = ", 
-	[
-		new Answer("0", 0),
-		new Answer("1", 1),
-		new Answer("2", 0),
-		new Answer("3", 0)
-	]),
-
-	new Question("2 - 2 = ", 
-	[
-		new Answer("0", 1),
-		new Answer("1", 0),
-		new Answer("2", 0),
-		new Answer("3", 0)
-	]),
-
-	new Question("2 + 2 * 2 = ", 
-	[
-		new Answer("4", 0),
-		new Answer("6", 1),
-		new Answer("8", 0),
-		new Answer("10", 0)
-	]),
-
-	new Question("2 + 2 / 2 = ", 
-	[
-		new Answer("1", 0),
-		new Answer("2", 0),
-		new Answer("3", 1),
-		new Answer("4", 0)
-	])
-];
-
-*/
-
 //КОЛИЧЕСТВО ВАРИАНТОВ МОЖЕТ БЫТЬ РАЗНЫМ
 
 const questions = 
 [
-	new Question("Mann = ", 
+	new Question("Mann = <img height=100px width=100px src='https://st.storeland.ru/12/2598/185/noroot.png'>",
 	[
 		new Answer("Der", 1),
 		new Answer("Das", 0),
@@ -209,7 +168,7 @@ const questions =
 		new Answer("Des", 0)
 	]),
 
-	new Question("Madchen = ", 
+	new Question("Madchen = ",
 	[
 		new Answer("Der", 0),
 		new Answer("Das", 1),
@@ -245,8 +204,7 @@ function shuffle(array) {
 	}
   }
 
-shuffle(questions)
-
+shuffle(questions);
 
 
 //Сам тест
@@ -343,3 +301,5 @@ function Click(index)
 	//Ждём секунду и обновляем тест
 	setTimeout(Update, 1000);
 }
+
+

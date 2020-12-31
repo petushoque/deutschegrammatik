@@ -43,13 +43,48 @@
     box-sizing: border-box;
     padding: 60px 20px 60px 20px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.content {
+.topics {
+    width: 75%;
+    min-width: 280px;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.topics_inactive {
+    display: none;
+}
+
+.topics__list {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.topic {
+    cursor: pointer;
+    list-style: none;
+    line-height: 40px;
+}
+
+.test {
+    display: none;
+
+    width: 75%;
+    min-width: 280px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.test_active {
+    display: block;
 }
 
 .head__content {
