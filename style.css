@@ -31,10 +31,15 @@
     border-radius: 10px;
     box-sizing: border-box;
     padding: 10px;
+
+    flex-direction: column;
+    align-items: center;
+
+    
 }
 
 .test_active {
-    display: block;
+    display: flex;
 }
 
 .head__content {
@@ -45,6 +50,20 @@
     justify-content: start;
 }
 
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.button {
+    margin: 0 10px 10px;
+}
+
+.button:hover {
+    background-color:rosybrown;
+}
+
 .button_correct {
     background-color: green;
 }
@@ -53,8 +72,29 @@
     background-color: red;
 }
 
+.quiz__reset {
+    width: 400px;
+    height: 45px;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .quiz__reset {
+        width: 75%;
+    }
+}
+
+.quiz__reset:hover {
+    background-color:rosybrown;
+}
+
+.quiz__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 
-.testclass {
-    background-color: red;
+.quiz__image {
+    margin-bottom: 30px;
 }

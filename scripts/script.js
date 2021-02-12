@@ -7,63 +7,40 @@ let topics = document.querySelector(".topics")
 let test = document.querySelector(".test")
 
 let questions = []; //TEST
-let topicAction = document.querySelector(".topic_action");
+let topicPronouns = document.querySelector(".topic_pronouns");
 
 function openTest() {
-
-	//====== TEST
-	questions = deutsch;
+	questions = dataPeople;
 	console.log(questions)
 
 	test.classList.add("test_active")
 	topics.classList.add("topics_inactive")
 	console.log('WoW');
-	testTestTest()
+	startQuiz()
 }
 
 function openTestWow() {
-
-	//====== TEST
-	questions = joka;
+	questions = dataPronouns;
 	console.log(questions)
 
 	test.classList.add("test_active")
 	topics.classList.add("topics_inactive")
 	console.log('WoW!!!!!!!!!!!!!!!!!');
-	testTestTest()
+	startQuiz()
 }
 
 
 topicPeople.addEventListener('click', openTest);
-topicAction.addEventListener('click', openTestWow);
+topicPronouns.addEventListener('click', openTestWow);
 
-/*
-class Question 
-{
-	constructor(text, answers)
-	{
-		this.text = text;
-		this.answers = answers; 
-	}
+const resetButton = document.querySelector('.quiz__reset')
+resetButton.addEventListener('click', toMainMenu)
 
-	Click(index) 
-	{
-		return this.answers[index].value; 
-	}
+function toMainMenu(){
+	window.location.reload(); //перезагрузка страницы
 }
 
-//Класс, представляющий ответ
-class Answer 
-{
-	constructor(text, value) 
-	{
-		this.text = text; 
-		this.value = value; 
-	}
-}
-*/
-
-function testTestTest(){
+function startQuiz(){
 
 //Класс, который представляет сам тест
 class Quiz
@@ -147,37 +124,6 @@ class Quiz
 	}
 } 
 
-//Класс, представляющий вопрос
-
-/*
-class Question 
-{
-	constructor(text, answers)
-	{
-		this.text = text;
-		this.answers = answers; 
-	}
-
-	Click(index) 
-	{
-		return this.answers[index].value; 
-	}
-}
-
-
-
-//Класс, представляющий ответ
-class Answer 
-{
-	constructor(text, value) 
-	{
-		this.text = text; 
-		this.value = value; 
-	}
-}
-*/
-
-
 //Класс, представляющий результат
 class Result 
 {
@@ -210,45 +156,6 @@ const results =
 	new Result("Вы в совершенстве знаете тему", 6)
 ];
 
-
-
-//КОЛИЧЕСТВО ВАРИАНТОВ МОЖЕТ БЫТЬ РАЗНЫМ
-
-/*
-const questions = 
-[
-	new Question(`"Mann = ${derMann}`,
-	[
-		new Answer("Der", 1),
-		new Answer("Das", 0),
-		new Answer("Die", 0),
-		new Answer("Den", 0),
-		new Answer("Dem", 0),
-		new Answer("Des", 0)
-	]),
-
-	new Question(`"Madchen = " ${bbb}`,
-	[
-		new Answer("Der", 0),
-		new Answer("Das", 1),
-		new Answer("Die", 0),
-		new Answer("Den", 0),
-		new Answer("Dem", 0),
-		new Answer("Des", 0)
-	]),
-
-	new Question(`${dieFrau} "Frau = " <h1>TEST HELLO WORLD</h1>`, 
-	[
-		new Answer("Der", 0),
-		new Answer("Das", 0),
-		new Answer("Die", 1),
-		new Answer("Den", 0),
-		new Answer("Dem", 0),
-		new Answer("Des", 0)
-	])
-]
-/*
-
 /*=== функция перемешивания элементов массива*/
 
 function shuffle(array) {
@@ -268,7 +175,6 @@ shuffle(questions);
 
 
 //Сам тест
-// РАСКОММЕНТИРОВАТЬ
 const quiz = new Quiz(1, questions, results);
 
 Update();
@@ -363,77 +269,4 @@ function Click(index)
 	setTimeout(Update, 1000);
 }
 
-/////////// НЕ ЗАБЫТЬ Убрать
 }
-
-
-/*
-
-const joka = 
-[
-	new Question(`Joka?`,
-	[
-		new Answer("Schreibt", 1),
-		new Answer("Schreiben", 0),
-		new Answer("Schreibst", 0),
-		new Answer("Schreibe", 0)
-	])
-]
-
-const boka = 
-[
-	new Question(`Boka?`,
-	[
-		new Answer("Der", 1),
-		new Answer("Das", 0),
-		new Answer("Die", 0),
-		new Answer("Den", 0),
-		new Answer("Dem", 0),
-		new Answer("Des", 0)
-	])
-]
-
-let deutsch = 
-[
-	new Question(`${derMann}"Mann = "`,
-	[
-		new Answer("Der", 1),
-		new Answer("Das", 0),
-		new Answer("Die", 0),
-		new Answer("Den", 0),
-		new Answer("Dem", 0),
-		new Answer("Des", 0)
-	]),
-
-	new Question(`${dasMadchen}"Madchen = "`,
-	[
-		new Answer("Der", 0),
-		new Answer("Das", 1),
-		new Answer("Die", 0),
-		new Answer("Den", 0),
-		new Answer("Dem", 0),
-		new Answer("Des", 0)
-	]),
-
-	new Question(`${derJunge}"Junge = "`,
-	[
-		new Answer("Der", 1),
-		new Answer("Das", 0),
-		new Answer("Die", 0),
-		new Answer("Den", 0),
-		new Answer("Dem", 0),
-		new Answer("Des", 0)
-	]),
-
-	new Question(`${dieFrau}"Frau = "`, 
-	[
-		new Answer("Der", 0),
-		new Answer("Das", 0),
-		new Answer("Die", 1),
-		new Answer("Den", 0),
-		new Answer("Dem", 0),
-		new Answer("Des", 0)
-	])
-]
-
-*/
