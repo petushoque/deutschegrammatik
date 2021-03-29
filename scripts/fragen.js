@@ -119,7 +119,7 @@ const dataPronouns =
 	new Question(`${pronEs}"It = "`,
 	[
 		new Answer("du", 0),
-		new Answer("sie", 0),
+		new Answer("ich", 0),
 		new Answer("er", 0),
 		new Answer("es", 1)
 	]),
@@ -175,7 +175,7 @@ const dataPronouns =
 	new Question(`${pronIhr}"You = "`,
 	[
 		new Answer("ihr", 1),
-		new Answer("er", 0),
+		new Answer("sie", 0),
 		new Answer("ich", 0),
 		new Answer("es", 0)
 	]),
